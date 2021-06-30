@@ -1,0 +1,51 @@
+Given a list of names, display the longest name.
+
+
+Example:
+
+Input:
+N = 5
+names[] = { "Geek", "Geeks", "Geeksfor",
+  "GeeksforGeek", "GeeksforGeeks" }
+
+Output:
+GeeksforGeeks
+ 
+
+Your Task:  
+You don't need to read input or print anything. Your task is to complete the function longest() which takes the array names[] and its size N as inputs and returns the Longest name in the list of names.
+
+
+Expected Time Complexity: O(N)
+Expected Auxiliary Space: O(1)
+
+ 
+
+Constraints:
+1 <= N <= 100
+1 <= |length of name| <= 1000
+
+solution:
+class Solution{
+    public:
+    string longest(string names[], int n)
+    {
+        int i,j,count,max=0;
+        string ans,ans1;
+        for(i=0;i<n;i++)
+        {
+            ans=names[i];
+            int currlen=ans.length();
+            if(currlen>max)
+            {
+                max=currlen;
+                ans1=names[i];
+            }
+            
+            
+            
+        }
+        return ans1;
+        
+    }
+};
