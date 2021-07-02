@@ -35,3 +35,26 @@ Note- If there is no such element then return -1.
 
 Expected Time Complexity: O(N)
 Expected Auxiliary Space: O(MAX). where MAX is maximum element in the array.
+solution:
+class Solution{
+    public:
+    int findDuplicate(int arr[], int N, int K) 
+    { 
+       int count[256]={0},i,n=N;
+       for(i=0;i<n;i++)
+       {
+           count[arr[i]]++;
+       }
+    
+       for(i=0;i<256;i++)
+       {
+           
+           if(count[i]==K)
+           {
+               return i;
+           }
+          // cout<<count[i]<<" ";
+       }
+      
+    }
+};
