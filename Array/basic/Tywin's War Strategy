@@ -1,0 +1,44 @@
+Tywin Lannister is facing a war. He has N troops of soldiers. Each troop has a certain number of soldiers denoted by an array A.
+Tywin thinks that a troop is lucky if it has a number of soldiers as a multiple of K. He doesn't want to lose any soldiers, so he decides to train some more.
+He will win the war if he has at least half of his troops are lucky troops.
+Determine the minimum number of soldiers he must train to win the war.
+
+Example 1:
+
+â€‹Input : arr[ ] = {5, 6, 3, 2, 1} and K = 2
+Output : 1
+Explanation:
+Troop with 1 soldier is increased to 2.
+
+â€‹Example 2:
+
+Input : arr[ ] = {2, 3, 4, 9, 8, 7} 
+Output :  1
+Explanation:
+Troop with 3 soldier is increased to 4. 
+ 
+
+Your Task:
+This is a function problem. The input is already taken care of by the driver code. You only need to complete the function min_soldiers() that takes an array (arr), sizeOfArray (n), an integer K, and return the minimum number of soldiers he must train to win the war. The driver code takes care of the printing.
+
+Expected Time Complexity: O(N*LOG(N)).
+Expected Auxiliary Space: O(1).
+
+solution:
+int min_soldiers(int arr[], int n, int k){
+    // Complete the function
+    int i;
+    for(i=0;i<n;i++)
+    {
+        arr[i]=(k-arr[i]%k)%k;
+        
+    }
+    sort(arr,arr+n);
+    int m=(n+1)/2;
+    int sum=0;
+    for(i=0;i<m;i++)
+    {
+        sum=sum+arr[i];
+    }
+    return sum;
+}
